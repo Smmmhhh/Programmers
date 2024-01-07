@@ -1,0 +1,8 @@
+-- 코드를 입력하세요
+SELECT      FACTORY_ID
+        ,   FACTORY_NAME
+        ,   ADDRESS
+FROM    FOOD_FACTORY
+        -- 자를 문자열, 문자열 시작위치, 문자열 종료위치
+WHERE   SUBSTR(ADDRESS, 1, 3) = '강원도'
+ORDER BY 1

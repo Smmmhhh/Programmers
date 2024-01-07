@@ -1,0 +1,23 @@
+-- 코드를 입력하세요
+SELECT      I.REST_ID
+        ,   I.REST_NAME
+        ,   I.FOOD_TYPE
+        ,   I.FAVORITES
+        ,   I.ADDRESS	
+        ,   ROUND(AVG(R.REVIEW_SCORE), 2)  AS SCORE
+        -- ,   R.REVIEW_SCORE
+FROM REST_INFO I
+
+INNER JOIN REST_REVIEW R
+    ON I.REST_ID = R.REST_ID
+    
+WHERE SUBSTR(I.ADDRESS, 1, 2) = '서울'
+
+-- SCORE는 평균을 내줘야 하기 때문에 포함시키면 안된다.
+GROUP BY    I.REST_ID
+        ,   I.REST_NAME
+        ,   I.FOOD_TYPE
+        ,   I.FAVORITES
+        ,   I.ADDRESS	
+
+ORDER BY SCORE DESC, I.FAVORITES DESC
