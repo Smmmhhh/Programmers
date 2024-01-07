@@ -1,0 +1,13 @@
+-- 코드를 입력하세요
+SELECT       member_id
+            ,member_name 
+            ,gender 
+            , TO_CHAR(date_of_birth, 'YYYY-MM-DD') AS date_of_birth
+            
+from       MEMBER_PROFILE
+
+WHERE       extract(MONTH FROM DATE_OF_BIRTH) = '3' 
+            AND gender = 'W' 
+            AND NOT TLNO IS NULL
+
+ORDER BY member_id
