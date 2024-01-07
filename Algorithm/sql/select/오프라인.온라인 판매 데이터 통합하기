@@ -1,0 +1,19 @@
+-- 코드를 입력하세요
+SELECT      TO_CHAR(SALES_DATE, 'yyyy-MM-dd') AS SALES_DATE
+        ,   PRODUCT_ID   
+        ,   USER_ID
+        ,   SALES_AMOUNT
+FROM ONLINE_SALE 
+WHERE TO_CHAR(SALES_DATE, 'yyyy-MM') = '2022-03'
+
+UNION ALL
+
+-- UNION을 할 때 두 테이블이 서로 컬럼값이 다를 경우 NULL로 적어주면 처리가 된다. 
+SELECT      TO_CHAR(SALES_DATE, 'yyyy-MM-dd') AS SALES_DATE
+        ,   PRODUCT_ID   
+        ,   NULL AS USER_ID
+        ,   SALES_AMOUNT
+FROM OFFLINE_SALE
+WHERE TO_CHAR(SALES_DATE, 'yyyy-MM') = '2022-03'
+
+ORDER BY SALES_DATE, PRODUCT_ID, USER_ID
