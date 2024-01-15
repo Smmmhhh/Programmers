@@ -3,8 +3,8 @@ public class 타겟_넘버 {
 	public static int count = 0;
 
 	public static void main(String[] args) {
-		int[] numbers = {1, 1, 1, 1, 1};
-		int target = 3;
+		int[] numbers = {4, 1, 2, 1};
+		int target = 4;
 		
 		System.out.println(solution(numbers, target));
 	
@@ -15,7 +15,7 @@ public class 타겟_넘버 {
         int result = 0;
         int depth = 0;
 
-        dfs(numbers, target, depth, result);
+        dfs(numbers, depth, result, target);
         answer = count;
         
         return answer;
@@ -32,7 +32,6 @@ public class 타겟_넘버 {
     	
     	dfs(numbers, target, depth + 1, plus);	
     	dfs(numbers, target, depth + 1, minus);	
-    	
     }
-
+    
 }
