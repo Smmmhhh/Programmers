@@ -1,0 +1,26 @@
+-- 코드를 입력하세요
+SELECT      a.FOOD_TYPE
+        ,   a.REST_ID
+        ,   a.REST_NAME
+        ,   a.FAVORITES
+        
+FROM 
+(
+    SELECT    FOOD_TYPE
+            , REST_ID
+            , REST_NAME
+            , FAVORITES
+            , row_number() over(partition by food_type order by favorites desc) AS a
+    FROM REST_INFO
+) a
+
+WHERE a = 1
+ORDER BY a.FOOD_TYPE DESC
+
+-- row_number() over(partition by food_type order by favorites desc) 의 구문 사용이 핵심
+-- SELECT FOOD_TYPE
+--      , REST_ID
+--      , REST_NAME
+--      , FAVORITES
+--      , row_number() over(partition by food_type order by favorites desc) as a
+-- from REST_INFO
