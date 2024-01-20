@@ -1,6 +1,5 @@
 -- 코드를 입력하세요
 SELECT      CATEGORY
-        -- ,   MAX(PRICE) AS MAX_PRICE
         ,   PRICE
         ,   PRODUCT_NAME
         -- ,   RANK
@@ -11,11 +10,8 @@ FROM
             , PRODUCT_NAME
             , PRICE
     FROM FOOD_PRODUCT 
-    WHERE CATEGORY LIKE '%과자%' 
-        OR CATEGORY LIKE '%국%' 
-        OR CATEGORY LIKE '%김치%' 
-        OR CATEGORY LIKE '%식용유%'
-    GROUP BY CATEGORY, PRICE, PRODUCT_NAME 
+    WHERE CATEGORY IN('과자', '국', '김치', '식용유')
+    -- GROUP BY CATEGORY, PRICE, PRODUCT_NAME 
 )
 WHERE RANK = 1
         
