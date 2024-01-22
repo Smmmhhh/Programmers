@@ -23,10 +23,14 @@ public class 폰켓몬 {
         // N / 2 만큼 폰켓몬을 선택
         count = nums.length / 2;
         
-        // 폰켓몬 수 구하기
-        for(int i = 1; i <= count; i++) {
-        	if(i <= hs.size()) answer++;
-        }
+        // 포켓몬 종류보다 더 많이 선택 할 수 있다면 포켓몬 종류를 출력
+        if(count >= hs.size()) answer = hs.size();
+        else answer = count;	// 아니라면 선택할 수 있는 수 출력
+        		
+//        // 폰켓몬 수 구하기
+//        for(int i = 1; i <= count; i++) {
+//        	if(i <= hs.size()) answer++;
+//        }
        
         return answer;
     }
