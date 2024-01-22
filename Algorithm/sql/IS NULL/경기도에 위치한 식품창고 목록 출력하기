@@ -1,0 +1,11 @@
+-- 코드를 입력하세요
+SELECT      WAREHOUSE_ID
+        ,   WAREHOUSE_NAME
+        ,   ADDRESS
+        ,   NVL(FREEZER_YN, 'N') AS FREEZER_YN
+FROM FOOD_WAREHOUSE 
+WHERE WAREHOUSE_NAME LIKE '%경기%'
+ORDER BY 1
+
+// NVL : NULL 값인 경우 특정값으로 출력하고 싶을 때
+// NVL2 : NULL 값이 아닌 경우 특정값으로 출력하고 싶을 때
