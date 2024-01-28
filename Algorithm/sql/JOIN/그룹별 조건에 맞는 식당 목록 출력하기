@@ -5,7 +5,7 @@ SELECT      C.MEMBER_NAME
         ,   TO_CHAR(D.REVIEW_DATE, 'YYYY-MM-DD') AS REVIEW_DATE
 FROM 
 (
-		-- 리뷰를 가장 만이쓴 유저들의 목록 추출하기
+		-- 리뷰를 가장 많이쓴 유저들의 목록 추출하기
     SELECT      A.MEMBER_ID
             ,   A.MEMBER_NAME
     FROM MEMBER_PROFILE A
