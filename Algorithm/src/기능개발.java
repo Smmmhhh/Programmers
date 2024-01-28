@@ -30,6 +30,8 @@ public class 기능개발 {
 			arr[i] = count;
 		}
 
+//		[5, 10, 1, 1, 20, 1]
+		
 		// Two Pointer
 		int start = 0;
 		int end = 1;
